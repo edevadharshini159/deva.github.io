@@ -124,6 +124,12 @@ section.block{padding-block:84px 0}
 .cs p,.cs li{color:var(--muted);font-size:.96rem}
 .cs ul{margin:0;padding-left:18px;display:grid;gap:6px}
 .cs li::marker{color:var(--accent)}
+.cs.two{display:grid;grid-template-columns:1.4fr 1fr;gap:24px}
+.cs.two > div{min-width:0}
+.cs li b{color:var(--ink);font-weight:600}
+.metrics{display:flex;flex-wrap:wrap;gap:8px}
+.metric{font-size:.82rem;font-weight:500;padding:5px 11px;border-radius:999px;border:1px dashed color-mix(in srgb,var(--accent) 55%,var(--line));color:var(--accent)}
+@media (max-width:640px){.cs.two{grid-template-columns:1fr;gap:20px}}
 .cs.out{border-top:1px solid var(--line);padding-top:16px}
 .cs.out p{color:var(--ink)}
 @media (max-width:860px){.case{grid-template-columns:1fr}.case-side{border-right:0;border-bottom:1px solid var(--line)}.case-main{padding:24px}}
@@ -276,106 +282,70 @@ section.block{padding-block:84px 0}
       <div class="sec-head">
         <p class="eyebrow">Key projects</p>
         <h2>Selected work</h2>
-        <p class="sec-sub">Four projects across a B2B marketplace, healthcare claims and banking. Each one shows the context, my role, what I did and what the team got out of it.</p>
+        <p class="sec-sub">Four projects across a B2B marketplace, healthcare and banking. Each follows how I work as a Product Analyst: understand the problem and the users, define the requirements, deliver with the team and measure the result.</p>
       </div>
       <div class="cases">
-
         <article class="card case">
           <div class="case-side">
             <span class="p-cat">Product strategy · 2025 – Present</span>
-            <h3>AI-Driven Product Evolution: Pepagora 1.0 to 2.0</h3>
+            <h3>Pepagora 2.0: AI-Led Product Roadmap</h3>
             <p class="client">Pepagora · B2B marketplace</p>
-            <dl class="facts">
-              <div><dt>Role</dt><dd>Product Analyst</dd></div>
-              <div><dt>Team</dt><dd>Leadership, UI/UX, engineering, data, QA</dd></div>
-              <div><dt>Method</dt><dd>Agile sprints</dd></div>
-            </dl>
-            <div class="tags"><span class="tag">Competitive research</span><span class="tag">BRD / PRD</span><span class="tag">Roadmapping</span><span class="tag">Mind maps</span><span class="tag">UAT</span><span class="tag">Generative AI</span></div>
+            <dl class="facts"><div><dt>Role</dt><dd>Product Analyst</dd></div><div><dt>Team</dt><dd>Leadership, UI/UX, engineering, data, QA</dd></div><div><dt>Deliverables</dt><dd>Competitor matrix, BRD, PRD, user stories, roadmap</dd></div></dl>
+            <div class="tags"><span class="tag">Market research</span><span class="tag">BRD / PRD</span><span class="tag">Prioritization</span><span class="tag">JIRA</span><span class="tag">UAT</span><span class="tag">Generative AI</span></div>
           </div>
           <div class="case-main">
-            <div class="cs"><h4>Context</h4><p>Pepagora is a B2B marketplace that connects buyers and suppliers. Version 1.0 met the core listing and enquiry needs, and the company wanted version 2.0 to use AI to make discovery and matching smarter and to compete with larger B2B platforms.</p></div>
-            <div class="cs"><h4>What I did</h4><ul>
-              <li>Studied competing B2B marketplaces and their AI features to find gaps and opportunities for Pepagora.</li>
-              <li>Gathered requirements from leadership and internal teams and turned them into BRDs, PRDs, epics and user stories with clear acceptance criteria.</li>
-              <li>Built the 2.0 feature list and mind maps, then ranked enhancements by user value and effort to shape the release roadmap.</li>
-              <li>Reviewed user behaviour and product metrics to back up roadmap recommendations presented to leadership.</li>
-              <li>Ran grooming with engineering and supported QA with test scenarios, UAT and checks after each release.</li>
-              <li>Used Claude, OpenAI and Perplexity to speed up research and story drafting, and reviewed every output before it went to the team.</li>
-            </ul></div>
-            <div class="cs out"><h4>Outcome</h4><p>The team got a documented, prioritized AI-led direction for Pepagora 2.0, with requirements engineering could build from sprint by sprint.</p></div>
+            <div class="cs two"><div><h4>Problem</h4><p>Pepagora 1.0 handled basic product listings and buyer enquiries. To compete with larger B2B marketplaces, leadership wanted 2.0 to use AI, but needed evidence on which features to build first.</p></div><div><h4>Users</h4><p>SME suppliers listing their products, business buyers sourcing them, and Pepagora's internal sales team.</p></div></div>
+            <div class="cs"><h4>What I did</h4><ul><li><b>Discovery.</b> Compared Pepagora with leading B2B marketplaces on features, onboarding and use of AI, and summarized the gaps in a competitor matrix.</li><li><b>Data.</b> Reviewed user behaviour and product metrics, such as where users dropped off in onboarding and enquiry flows, to back each opportunity with evidence.</li><li><b>Prioritization.</b> Built the 2.0 feature list and mind maps, ranked features by user value against effort, and drafted the release roadmap.</li><li><b>Requirements.</b> Wrote BRDs, PRDs, epics and user stories with acceptance criteria, and walked engineering and UI/UX through them in backlog grooming.</li><li><b>Delivery.</b> Wrote test scenarios with QA, supported UAT, ran functional, UI and regression checks, and validated each release after deployment.</li></ul></div>
+            <div class="cs"><h4>Metrics tracked</h4><div class="metrics"><span class="metric">Onboarding completion</span><span class="metric">Enquiry volume</span><span class="metric">Feature adoption</span><span class="metric">Post-release defects</span></div></div>
+            <div class="cs out"><h4>Outcome</h4><p>A prioritized, evidence-backed 2.0 roadmap presented to leadership, and sprint-ready requirements the team now builds from.</p></div>
           </div>
         </article>
 
         <article class="card case">
           <div class="case-side">
             <span class="p-cat">Healthcare analytics · 2023 – 2025</span>
-            <h3>Medical Billing &amp; Claims Enhancement</h3>
+            <h3>Medical Billing &amp; Claims Analytics</h3>
             <p class="client">Inrika Inc · US healthcare client</p>
-            <dl class="facts">
-              <div><dt>Role</dt><dd>Business Analyst / Scrum Master</dd></div>
-              <div><dt>Team</dt><dd>Client stakeholders, developers, QA</dd></div>
-              <div><dt>Method</dt><dd>Agile / Scrum</dd></div>
-            </dl>
-            <div class="tags"><span class="tag">Tableau</span><span class="tag">Power BI</span><span class="tag">Google Analytics</span><span class="tag">SQL</span><span class="tag">Workflow docs</span></div>
+            <dl class="facts"><div><dt>Role</dt><dd>Business Analyst / Scrum Master</dd></div><div><dt>Team</dt><dd>Billing stakeholders, data team, developers, QA</dd></div><div><dt>Deliverables</dt><dd>Claims workflow map, KPI definitions, dashboards</dd></div></dl>
+            <div class="tags"><span class="tag">Tableau</span><span class="tag">Power BI</span><span class="tag">Google Analytics</span><span class="tag">SQL</span><span class="tag">Process mapping</span></div>
           </div>
           <div class="case-main">
-            <div class="cs"><h4>Context</h4><p>The client's billing team had little visibility into how claims moved through approval and payment. Claim denials, billing errors and slow payment cycles were hard to measure, which made it hard to know where to improve.</p></div>
-            <div class="cs"><h4>What I did</h4><ul>
-              <li>Mapped the end-to-end claims process from submission through review and approval to payment, and documented each step and handoff.</li>
-              <li>Worked with stakeholders to define the KPIs that mattered: claim approval rate, billing accuracy and payment cycle time.</li>
-              <li>Built Tableau, Power BI and Google Analytics dashboards so the team could track those KPIs and spot problem areas.</li>
-              <li>Wrote user stories and acceptance criteria for the enhancements and coordinated testing and UAT with QA.</li>
-            </ul></div>
-            <div class="cs out"><h4>Outcome</h4><p>The client got one clear view of claims performance and a documented workflow to base process improvements on.</p></div>
+            <div class="cs two"><div><h4>Problem</h4><p>The client's billing team could not easily see why claims were denied or delayed, so billing errors and slow payments were hard to fix at the source.</p></div><div><h4>Users</h4><p>Billing specialists, revenue cycle managers and the client's leadership team.</p></div></div>
+            <div class="cs"><h4>What I did</h4><ul><li><b>Discovery.</b> Met billing staff and mapped the claims lifecycle, from charge entry and claim submission through payer review to payment posting and denial follow-up, to find delays and rework.</li><li><b>Metric definitions.</b> Agreed clear definitions with stakeholders for claim approval rate, billing accuracy and payment cycle time, so every report used the same numbers.</li><li><b>Requirements.</b> Wrote user stories and acceptance criteria for the dashboard views and filters (payer, provider, date range), and documented data sources with the data team.</li><li><b>Build and validate.</b> Built the dashboards in Tableau, Power BI and Google Analytics, and checked the figures against source reports with SQL before release.</li><li><b>Delivery.</b> Ran UAT with the billing team and documented the claims workflow for ongoing use.</li></ul></div>
+            <div class="cs"><h4>Metrics tracked</h4><div class="metrics"><span class="metric">Claim approval rate</span><span class="metric">Billing accuracy</span><span class="metric">Payment cycle time</span><span class="metric">Denial reasons by payer</span></div></div>
+            <div class="cs out"><h4>Outcome</h4><p>Billing leads got one view of claims performance by payer and provider, showing where denials and delays came from, plus a documented workflow to improve against.</p></div>
           </div>
         </article>
 
         <article class="card case">
           <div class="case-side">
             <span class="p-cat">Banking · Risk · 2023 – 2025</span>
-            <h3>Fraud Detection in Banking</h3>
+            <h3>Fraud Monitoring Dashboard &amp; Prototype</h3>
             <p class="client">Inrika Inc · Banking client</p>
-            <dl class="facts">
-              <div><dt>Role</dt><dd>Business Analyst / Scrum Master</dd></div>
-              <div><dt>Team</dt><dd>Client risk team, developers, QA</dd></div>
-              <div><dt>Method</dt><dd>Agile / Scrum</dd></div>
-            </dl>
+            <dl class="facts"><div><dt>Role</dt><dd>Business Analyst / Scrum Master</dd></div><div><dt>Team</dt><dd>Risk analysts, developers, QA</dd></div><div><dt>Deliverables</dt><dd>User flows, Figma prototype, user stories, dashboards</dd></div></dl>
             <div class="tags"><span class="tag">Figma</span><span class="tag">Adobe XD</span><span class="tag">Power BI</span><span class="tag">Google Analytics</span><span class="tag">User flows</span></div>
           </div>
           <div class="case-main">
-            <div class="cs"><h4>Context</h4><p>The bank's risk team needed a faster way to spot suspicious activity. Anomalies were spread across transaction data, which made it slow to see which accounts and regions needed attention.</p></div>
-            <div class="cs"><h4>What I did</h4><ul>
-              <li>Gathered requirements from the risk team on the signals they watch and the decisions they make with them.</li>
-              <li>Designed user flows and UI prototypes in Figma and Adobe XD to agree the screens with stakeholders before development started.</li>
-              <li>Built Power BI and Google Analytics dashboards that track transaction anomalies, geographic trends and high-risk accounts.</li>
-              <li>Turned the agreed designs into user stories for developers and supported QA through testing and UAT.</li>
-            </ul></div>
-            <div class="cs out"><h4>Outcome</h4><p>The risk team got a prototype everyone had signed off on, and dashboards that show high-risk activity in one place.</p></div>
+            <div class="cs two"><div><h4>Problem</h4><p>Risk analysts reviewed suspicious transactions across several separate reports, which made it slow to spot high-risk accounts and regional patterns.</p></div><div><h4>Users</h4><p>Fraud and risk analysts, and the risk managers they report to.</p></div></div>
+            <div class="cs"><h4>What I did</h4><ul><li><b>Discovery.</b> Worked with risk analysts to understand how they review alerts and which signals, such as unusual amounts, locations and frequency, matter most.</li><li><b>Prototyping.</b> Designed user flows and clickable prototypes in Figma and Adobe XD for the alert list, account risk view and regional view, and refined them with stakeholder feedback.</li><li><b>Requirements.</b> Turned the approved screens into user stories with acceptance criteria and edge cases for developers.</li><li><b>Analytics.</b> Built Power BI and Google Analytics dashboards tracking transaction anomalies, geographic trends and high-risk accounts.</li><li><b>Delivery.</b> Ran sprint ceremonies and coordinated test planning and UAT with QA.</li></ul></div>
+            <div class="cs"><h4>Metrics tracked</h4><div class="metrics"><span class="metric">Transaction anomalies</span><span class="metric">High-risk accounts</span><span class="metric">Alerts by region</span><span class="metric">Trend over time</span></div></div>
+            <div class="cs out"><h4>Outcome</h4><p>Developers built from screens stakeholders had already approved, and analysts could see high-risk activity in one place.</p></div>
           </div>
         </article>
 
         <article class="card case">
           <div class="case-side">
             <span class="p-cat">Banking · Compliance · 2023 – 2025</span>
-            <h3>AML Compliance Enhancement</h3>
+            <h3>AML Compliance Process Redesign</h3>
             <p class="client">Inrika Inc · Banking client</p>
-            <dl class="facts">
-              <div><dt>Role</dt><dd>Business Analyst / Scrum Master</dd></div>
-              <div><dt>Team</dt><dd>Compliance, product owners, developers</dd></div>
-              <div><dt>Method</dt><dd>Agile / Scrum</dd></div>
-            </dl>
+            <dl class="facts"><div><dt>Role</dt><dd>Business Analyst / Scrum Master</dd></div><div><dt>Team</dt><dd>Compliance officers, product owners, developers</dd></div><div><dt>Deliverables</dt><dd>As-is / to-be flows, business rules, SOPs, API requirements</dd></div></dl>
             <div class="tags"><span class="tag">Process flows</span><span class="tag">Business rules</span><span class="tag">SOPs</span><span class="tag">API requirements</span><span class="tag">Visio / Lucidchart</span></div>
           </div>
           <div class="case-main">
-            <div class="cs"><h4>Context</h4><p>The bank needed to strengthen its anti-money-laundering (AML) controls: monitoring transactions, raising Suspicious Activity Reports (SARs) and connecting the monitoring system to core banking.</p></div>
-            <div class="cs"><h4>What I did</h4><ul>
-              <li>Analyzed the existing compliance workflow with the compliance team to find gaps and manual steps.</li>
-              <li>Created process flows covering how a transaction is monitored, flagged, investigated and reported.</li>
-              <li>Documented the business rules for transaction monitoring and the requirements for SAR filing.</li>
-              <li>Wrote requirements for the API integration with the core banking system so the right data reached the monitoring tool.</li>
-              <li>Prepared SOPs so compliance staff could follow the new process consistently.</li>
-            </ul></div>
-            <div class="cs out"><h4>Outcome</h4><p>The client got clear, documented AML rules, flows and SOPs that both the compliance team and the developers could work from.</p></div>
+            <div class="cs two"><div><h4>Problem</h4><p>The bank's anti-money-laundering (AML) process relied on manual steps and loosely documented rules, and the monitoring tool needed reliable data from core banking.</p></div><div><h4>Users</h4><p>Compliance officers and AML investigators, plus the developers building the integration.</p></div></div>
+            <div class="cs"><h4>What I did</h4><ul><li><b>Current state.</b> Mapped the as-is compliance process with the compliance team and highlighted manual handoffs and gaps.</li><li><b>Business rules.</b> Documented the transaction monitoring rules, including thresholds and the patterns that should raise an alert.</li><li><b>Future state.</b> Designed to-be process flows from alert to investigation, escalation and Suspicious Activity Report (SAR) filing.</li><li><b>Integration.</b> Wrote API requirements for the core banking integration: the data fields needed, how often they refresh and how errors are handled.</li><li><b>Adoption.</b> Prepared SOPs so compliance staff could follow the new process consistently.</li></ul></div>
+            <div class="cs"><h4>Metrics tracked</h4><div class="metrics"><span class="metric">Alert volume</span><span class="metric">Investigation turnaround</span><span class="metric">SAR filing timeliness</span></div></div>
+            <div class="cs out"><h4>Outcome</h4><p>Compliance and development teams worked from one set of documented rules, flows and SOPs, ready for build and audit.</p></div>
           </div>
         </article>
 
