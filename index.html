@@ -11,19 +11,19 @@
 <style>
 /* Layout: a calm, corporate one-pager. Hero with contact details up front, then projects, experience timeline, skills, education. */
 :root{
-  --bg:#F5F7FA; --surface:#FFFFFF; --ink:#0F1B2D; --muted:#56627A; --line:#DDE2EA;
-  --accent:#1E4FA8; --accent-soft:#E6EDF8; --deep:#0F2547; --deep-ink:#EAF0FA;
+  --bg:#F6F5FA; --surface:#FFFFFF; --ink:#1A1530; --muted:#5F5A73; --line:#E2DFEC;
+  --accent:#6D4AE0; --accent-soft:#EEE9FC; --deep:#231A45; --deep-ink:#EFEBFB; --live:#1F9D62;
   --f-display:"Manrope", "Segoe UI", system-ui, sans-serif;
   --f-body:"Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
   --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
   --r:10px;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0C1220; --surface:#141C2E; --ink:#E6EBF3; --muted:#9AA5BA; --line:#253049;
-  --accent:#86A9F0; --accent-soft:#1B2944; --deep:#18243D; --deep-ink:#E6EBF3; color-scheme:dark}}
+  --bg:#110E1C; --surface:#1A1628; --ink:#ECE9F5; --muted:#A39DB8; --line:#2D2742;
+  --accent:#A78BFA; --accent-soft:#2A2245; --deep:#1F1935; --deep-ink:#ECE9F5; --live:#4ADE9A; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0C1220; --surface:#141C2E; --ink:#E6EBF3; --muted:#9AA5BA; --line:#253049;
-  --accent:#86A9F0; --accent-soft:#1B2944; --deep:#18243D; --deep-ink:#E6EBF3; color-scheme:dark}
+  --bg:#110E1C; --surface:#1A1628; --ink:#ECE9F5; --muted:#A39DB8; --line:#2D2742;
+  --accent:#A78BFA; --accent-soft:#2A2245; --deep:#1F1935; --deep-ink:#ECE9F5; --live:#4ADE9A; color-scheme:dark}
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -48,12 +48,22 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 @media (max-width:760px){.navlinks a{display:none}}
 
 /* Hero */
-.hero{padding-block:76px 64px}
+.hero{padding-block:72px 64px;position:relative;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background-image:radial-gradient(color-mix(in srgb,var(--accent) 22%,transparent) 1px,transparent 1.4px);background-size:22px 22px;-webkit-mask-image:linear-gradient(180deg,#000 0%,transparent 85%);mask-image:linear-gradient(180deg,#000 0%,transparent 85%)}
+.status{display:inline-flex;align-items:center;gap:10px;padding:6px 14px 6px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:.86rem;font-weight:500;color:var(--muted)}
+.status b{color:var(--ink);font-weight:600}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--live);box-shadow:0 0 0 0 color-mix(in srgb,var(--live) 60%,transparent);animation:pulse 2.4s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.statement{font-family:var(--f-display);font-size:clamp(1.25rem,2.4vw,1.6rem);font-weight:600;line-height:1.35;letter-spacing:-.01em;margin-top:18px;max-width:30ch;text-wrap:balance}
+.statement em{font-style:normal;color:var(--accent)}
+.toolkit{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-top:34px;padding-top:22px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+.toolkit span:first-child{font-family:var(--f-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.12em}
+.toolkit b{font-weight:600;color:var(--ink)}
 .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:start}
 .hero-grid > *{min-width:0}
-.hero h1{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:800;letter-spacing:-.03em;margin-top:14px}
-.role{font-family:var(--f-display);font-size:clamp(1.15rem,2.2vw,1.4rem);font-weight:600;color:var(--muted);margin-top:10px}
-.lede{font-size:1.08rem;color:var(--muted);max-width:60ch;margin-top:22px}
+.hero h1{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:800;letter-spacing:-.035em;margin-top:22px}
+.role{font-family:var(--f-mono);font-size:.85rem;font-weight:500;color:var(--accent);margin-top:12px;letter-spacing:.04em;text-transform:uppercase}
+.lede{font-size:1.02rem;color:var(--muted);max-width:60ch;margin-top:14px}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:8px;font-weight:600;font-size:.93rem;text-decoration:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;font-family:inherit}
 .btn.primary{background:var(--accent);color:var(--surface);border-color:var(--accent)}
@@ -90,7 +100,7 @@ section.block{padding-block:84px 0}
 /* Projects */
 .board{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 .project{padding:26px;display:flex;flex-direction:column;gap:12px;transition:box-shadow .2s,border-color .2s}
-.project:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line));box-shadow:0 14px 30px -22px rgba(15,27,45,.45)}
+.project:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line));box-shadow:0 14px 30px -22px rgba(35,26,69,.45)}
 .p-cat{font-family:var(--f-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
 .project h3{font-size:1.28rem;font-weight:700;letter-spacing:-.01em}
 .client{color:var(--accent);font-weight:600;font-size:.88rem;margin-top:-4px}
@@ -190,7 +200,7 @@ section.block{padding-block:84px 0}
   section.block{padding-block:64px 0}
   .edu-list{padding:4px 18px}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.project{transition:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pulse{animation:none}.project{transition:none}}
 </style>
 </head>
 <body>
@@ -214,14 +224,16 @@ section.block{padding-block:84px 0}
   <header class="hero">
     <div class="wrap hero-grid">
       <div>
-        <p class="eyebrow">Portfolio</p>
+        <p class="status"><span class="pulse" aria-hidden="true"></span>Currently <b>Product Analyst at Pepagora</b></p>
         <h1>Devadharshini Eswaran</h1>
         <p class="role">Product Analyst · Business Analyst · CSPO</p>
-        <p class="lede">Product Analyst with 3+ years of experience in B2B product and business analysis across India and the USA. I translate business requirements into user stories and acceptance criteria, groom and prioritize backlogs, and work closely with clients, engineering and QA through Agile sprints. Experienced in Figma prototyping, SQL, Power BI and Tableau analytics, and generative AI tools, with exposure to healthcare claims and banking compliance.</p>
+        <p class="statement">I turn business needs into <em>clear, buildable requirements</em> that engineering teams can ship with confidence.</p>
+        <p class="lede">3+ years in B2B product and business analysis across India and the USA. I write user stories and PRDs, prioritize backlogs, prototype in Figma and back decisions with SQL, Power BI and Tableau.</p>
         <div class="cta">
           <a class="btn primary" href="#contact">Contact me</a>
           <a class="btn" href="#projects">View projects</a>
         </div>
+        <p class="toolkit"><span>Works with</span><b>JIRA</b><b>Confluence</b><b>Figma</b><b>SQL</b><b>Power BI</b><b>Tableau</b><b>Claude</b></p>
       </div>
 
       <aside class="card contact-card" aria-label="Contact details">
